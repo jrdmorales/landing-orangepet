@@ -127,6 +127,21 @@ h1, h2 { margin: 0; }
   text-align: center;
   display: block;
 }
+.btn--wsp {
+  background: #25D366;
+  color: #fff;
+  padding: 14px 26px;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn--wsp.btn--full {
+  justify-content: center;
+  display: flex;
+}
 
 /* === HELPERS === */
 .text-muted     { color: rgba(0,0,0,.4); }
@@ -208,6 +223,11 @@ h1, h2 { margin: 0; }
   font-weight: 500;
 }
 .navbar__links a:hover { color: var(--accent); }
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .navbar__cta {
   padding: 11px 20px !important;
   font-size: 13.5px !important;
@@ -966,6 +986,21 @@ h1, h2 { margin: 0; }
   font-size: 22px;
 }
 .contact-success__desc { font-size: 14px; color: var(--muted); }
+.form-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0;
+  color: rgba(0,0,0,.35);
+  font-size: 13px;
+}
+.form-divider::before,
+.form-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(0,0,0,.1);
+}
 .form-group { margin-bottom: 14px; }
 .form-group label {
   font-size: 12.5px;
@@ -1046,7 +1081,7 @@ h1, h2 { margin: 0; }
   /* Navbar mobile */
   .navbar { position: relative; flex-wrap: wrap; }
   .navbar__hamburger { display: flex; }
-  .navbar__cta { display: none; }
+  .navbar__actions { display: none; }
   .navbar__links {
     display: none;
     position: absolute;
