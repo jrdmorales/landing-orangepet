@@ -3,10 +3,61 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Orange Pest — Control de Plagas Profesional</title>
+  <title>Orange Pest — Control de Plagas Profesional en Santiago</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Orange Pest: control de plagas profesional en Santiago. Fumigación, desratización y más. Resolución sanitaria vigente. Certificado al finalizar. Cotización sin compromiso.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.orangepest.cl/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:title" content="Orange Pest — Control de Plagas Profesional en Santiago">
+  <meta property="og:description" content="Fumigación y desratización en Santiago con resolución sanitaria vigente. Cotiza gratis, sin compromiso.">
+  <meta property="og:url" content="https://www.orangepest.cl/">
+  <meta property="og:image" content="https://www.orangepest.cl/og-image.jpg">
+  <meta property="og:site_name" content="Orange Pest">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Orange Pest — Control de Plagas en Santiago">
+  <meta name="twitter:description" content="Fumigación y desratización en Santiago con resolución sanitaria. Cotiza gratis.">
+  <meta name="twitter:image" content="https://www.orangepest.cl/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PestControlService",
+    "name": "Orange Pest",
+    "description": "Control de plagas profesional en Santiago. Fumigación, desratización y certificado sanitario.",
+    "url": "https://www.orangepest.cl",
+    "telephone": "+56900000000",
+    "email": "hola@orangepest.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santiago",
+      "addressRegion": "Región Metropolitana",
+      "addressCountry": "CL"
+    },
+    "areaServed": { "@type": "City", "name": "Santiago" },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:00",
+      "closes": "19:00"
+    },
+    "priceRange": "$$"
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Hanken+Grotesque:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Hanken+Grotesque:wght@400;500;600&family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -26,7 +77,6 @@
       <a href="#servicios">Servicios</a>
       <a href="#nosotros">Nosotros</a>
       <a href="#areas">Áreas</a>
-      <a href="#blog">Blog</a>
       <a href="#contacto">Contacto</a>
     </div>
     <div class="navbar__actions">
@@ -54,12 +104,8 @@
     </div>
   </header>
 
-  <!-- MARCAS + STATS -->
+  <!-- STATS -->
   <section class="brands-stats pc-reveal" id="marcas">
-    <p class="section-label section-label--light section-label--center">TRABAJAMOS CON LAS MEJORES MARCAS</p>
-    <div class="marquee-wrap">
-      <div class="pc-marquee" id="brandsMarquee"></div>
-    </div>
     <div class="stats-grid" id="statsGrid"></div>
   </section>
 
@@ -171,37 +217,6 @@
     </div>
   </section>
 
-  <!-- TESTIMONIOS -->
-  <section class="testimonios pc-reveal">
-    <p class="section-label section-label--light section-label--center">CLIENTES QUE CONFÍAN</p>
-    <div class="testimonios__body">
-      <p class="testimonios__quote" id="testiQuote"></p>
-      <div class="testimonios__author">
-        <div class="testimonios__avatar gradient-bg"></div>
-        <div>
-          <div class="testimonios__name" id="testiName"></div>
-          <div class="testimonios__role" id="testiRole"></div>
-        </div>
-      </div>
-      <div class="testimonios__dots" id="testiDots"></div>
-    </div>
-    <div class="marquee-wrap--border">
-      <div class="pc-marquee" id="clientsMarquee"></div>
-    </div>
-  </section>
-
-  <!-- BLOG -->
-  <section class="section" id="blog">
-    <div class="blog__header">
-      <div>
-        <p class="section-label section-label--accent">BLOG</p>
-        <h2 class="section__title">Consejos para mantener tu espacio libre de plagas</h2>
-      </div>
-      <a class="link blog__more" href="#blog">Ver todo →</a>
-    </div>
-    <div class="blog-grid" id="blogGrid"></div>
-  </section>
-
   <!-- CONTACTO -->
   <section class="section" id="contacto">
     <div class="contact-card pc-reveal">
@@ -222,18 +237,23 @@
           <div class="contact-success__title">¡Mensaje enviado!</div>
           <div class="contact-success__desc">Te contactaremos muy pronto.</div>
         </div>
-        <form id="contactForm">
+        <form id="contactForm" action="https://formspree.io/f/YOURFORMID" method="POST">
+          <input type="hidden" name="_language" value="es">
           <div class="form-group">
-            <label>Nombre</label>
-            <input required type="text" placeholder="Tu nombre">
+            <label for="f-nombre">Nombre</label>
+            <input id="f-nombre" required type="text" name="nombre" placeholder="Tu nombre">
           </div>
           <div class="form-group">
-            <label>Teléfono o correo</label>
-            <input required type="text" placeholder="¿Cómo te contactamos?">
+            <label for="f-tel">Teléfono</label>
+            <input id="f-tel" type="tel" inputmode="tel" name="telefono" placeholder="+56 9 XXXX XXXX">
           </div>
           <div class="form-group">
-            <label>¿Qué necesitas?</label>
-            <textarea rows="3" placeholder="Cuéntanos tu situación..."></textarea>
+            <label for="f-email">Correo electrónico</label>
+            <input id="f-email" type="email" name="email" placeholder="tu@correo.com">
+          </div>
+          <div class="form-group">
+            <label for="f-msg">¿Qué necesitas?</label>
+            <textarea id="f-msg" name="mensaje" rows="3" placeholder="Cuéntanos tu situación..."></textarea>
           </div>
           <button type="submit" class="btn btn--dark btn--full">Solicitar Cotización</button>
           <div class="form-divider"><span>o</span></div>
@@ -258,24 +278,21 @@
       </div>
       <div class="footer-col">
         <div class="footer-col__head">Servicios</div>
-        <a href="#" class="footer-link">Fumigación</a>
-        <a href="#" class="footer-link">Roedores</a>
-        <a href="#" class="footer-link">Sanitización</a>
-        <a href="#" class="footer-link">Mosquitos</a>
+        <a href="#servicios" class="footer-link">Fumigación</a>
+        <a href="#servicios" class="footer-link">Desratización</a>
+        <a href="#servicios" class="footer-link">Pre-Demolición</a>
       </div>
       <div class="footer-col">
         <div class="footer-col__head">Empresa</div>
-        <a href="#" class="footer-link">Nosotros</a>
-        <a href="#" class="footer-link">Áreas</a>
-        <a href="#" class="footer-link">Clientes</a>
-        <a href="#" class="footer-link">Blog</a>
+        <a href="#nosotros" class="footer-link">Nuestro proceso</a>
+        <a href="#areas" class="footer-link">Áreas de cobertura</a>
+        <a href="#contacto" class="footer-link">Contacto</a>
       </div>
       <div class="footer-col">
-        <div class="footer-col__head">Contacto</div>
-        <a href="#" class="footer-link">Cotizar</a>
-        <a href="#" class="footer-link">WhatsApp</a>
-        <a href="#" class="footer-link">Emergencias</a>
-        <a href="#" class="footer-link">FAQ</a>
+        <div class="footer-col__head">Contactar</div>
+        <a href="#contacto" class="footer-link">Solicitar cotización</a>
+        <a href="https://wa.me/56900000000" target="_blank" rel="noopener" class="footer-link">WhatsApp</a>
+        <a href="mailto:hola@orangepest.com" class="footer-link">hola@orangepest.com</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -285,6 +302,10 @@
   </footer>
 
 </div>
+
+<a href="https://wa.me/56900000000" target="_blank" rel="noopener" class="wsp-float" aria-label="Contactar por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
 <script src="js/main.js"></script>
 </body>

@@ -84,26 +84,13 @@ buildCreature(document.getElementById('ratArt'), [
 ], PURPLE);
 
 /* ============================================================
-   BRANDS MARQUEE
-   ============================================================ */
-const brands = ['AGROX','BIOKILL','TERMIX','ECOVERDE','PESTPRO','SANIX'];
-const brandsEl = document.getElementById('brandsMarquee');
-[...brands, ...brands].forEach(b => {
-  const s = document.createElement('span');
-  s.className = 'brand-item';
-  s.textContent = b;
-  brandsEl.appendChild(s);
-});
-
-/* ============================================================
    STATS
    ============================================================ */
 const statsData = [
   { num: '+150', to: 150, pre:'+', suf:'',  dec:0, label:'Hogares protegidos' },
-  { num: '+100', to: 100,   pre:'+', suf:'',   dec:0, label:'Empresas atendidas' },
-  { num: '98%',  to: 98,    pre:'',  suf:'%',  dec:0, label:'Efectividad comprobada' },
-  { num: '4.9/5',to: 4.9,   pre:'',  suf:'/5', dec:1, label:'Reseñas de clientes' },
-  { num: '24h',  to: 24,    pre:'',  suf:'h',  dec:0, label:'Tiempo de respuesta' },
+  { num: '+100', to: 100, pre:'+', suf:'',  dec:0, label:'Empresas atendidas' },
+  { num: '98%',  to: 98,  pre:'',  suf:'%', dec:0, label:'Efectividad comprobada' },
+  { num: '24h',  to: 24,  pre:'',  suf:'h', dec:0, label:'Tiempo de respuesta' },
 ];
 
 const statsGrid = document.getElementById('statsGrid');
@@ -208,7 +195,7 @@ renderProceso();
 const reasons = [
   { n:'01', color:PINK,   title:'Resolución Sanitaria', desc:'Trabajamos con resolución sanitaria vigente y entregamos el certificado de servicio al finalizar cada trabajo.' },
   { n:'02', color:MID,    title:'Técnicos capacitados',  desc:'Personal con formación específica en el manejo seguro de productos fitosanitarios autorizados.' },
-  { n:'03', color:PURPLE, title:'Experiencia comprobada',desc:'Más de X años protegiendo hogares y empresas en Santiago y alrededores.' },
+  { n:'03', color:PURPLE, title:'Experiencia comprobada',desc:'Historial comprobado en control de plagas para hogares y empresas en Santiago y alrededores.' },
   { n:'04', color:PINK,   title:'Productos autorizados', desc:'Utilizamos únicamente productos aprobados por la normativa sanitaria vigente.' },
   { n:'05', color:MID,    title:'Respuesta rápida',      desc:'Atención ágil en Santiago y alrededores. Coordinamos visita el mismo día que nos contactas.' },
 ];
@@ -248,69 +235,6 @@ areas.forEach(a => {
 });
 
 /* ============================================================
-   TESTIMONIALS
-   ============================================================ */
-const testiData = [
-  { quote:'Desde que trabajamos con PlagaCero no hemos tenido una sola incidencia en nuestras cocinas. Su seguimiento es impecable.', author:'Marcela Ruiz',    role:'Gerente de Operaciones · Grupo Sabor' },
-  { quote:'Resolvieron una plaga de roedores en nuestra bodega en tiempo récord y sin interrumpir la operación.',                      author:'Andrés Molina',  role:'Jefe de Logística · Distribuidora Nido' },
-  { quote:'Profesionales, puntuales y con productos seguros para nuestros clientes. Los recomiendo totalmente.',                       author:'Lucía Fernández',role:'Propietaria · Hotel Miramar' },
-];
-
-let activeTesti = 0;
-
-function renderTesti() {
-  const t = testiData[activeTesti];
-  document.getElementById('testiQuote').textContent = `"${t.quote}"`;
-  document.getElementById('testiName').textContent  = t.author;
-  document.getElementById('testiRole').textContent  = t.role;
-  const dotsEl = document.getElementById('testiDots');
-  dotsEl.innerHTML = '';
-  testiData.forEach((_, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'testi-dot' + (i === activeTesti ? ' active' : '');
-    btn.setAttribute('aria-label', `Testimonio ${i+1}`);
-    btn.addEventListener('click', () => { activeTesti = i; renderTesti(); });
-    dotsEl.appendChild(btn);
-  });
-}
-renderTesti();
-setInterval(() => { activeTesti = (activeTesti + 1) % testiData.length; renderTesti(); }, 5000);
-
-/* ============================================================
-   CLIENTS MARQUEE
-   ============================================================ */
-const clients = ['SABOR','NIDO','PLAZA','GRANO','HOTEL·M','FRESH','AURA','VERDE'];
-const clientsEl = document.getElementById('clientsMarquee');
-[...clients, ...clients].forEach(c => {
-  const d = document.createElement('div');
-  d.className = 'client-item';
-  d.textContent = c;
-  clientsEl.appendChild(d);
-});
-
-/* ============================================================
-   BLOG
-   ============================================================ */
-const posts = [
-  { tag:'PREVENCIÓN', color:PINK,   title:'7 señales de que tienes plaga de cucarachas',  desc:'Aprende a detectar una infestación antes de que se salga de control.' },
-  { tag:'HOGAR',      color:MID,    title:'Cómo mantener tu cocina libre de hormigas',    desc:'Rutinas simples que marcan la diferencia día a día.' },
-  { tag:'NEGOCIOS',   color:PURPLE, title:'Normativa sanitaria para restaurantes 2026',   desc:'Todo lo que tu negocio necesita para pasar la inspección.' },
-];
-
-const blogGrid = document.getElementById('blogGrid');
-posts.forEach(p => {
-  const a = document.createElement('a');
-  a.href = '#blog';
-  a.className = 'blog-card pc-reveal pc-lift';
-  a.innerHTML =
-    `<div class="blog-card__img">${p.tag}</div>
-     <div class="blog-card__tag" style="background:${p.color}">${p.tag}</div>
-     <div class="blog-card__title">${p.title}</div>
-     <div class="blog-card__desc">${p.desc}</div>`;
-  blogGrid.appendChild(a);
-});
-
-/* ============================================================
    CERT BADGE ICONS
    ============================================================ */
 (function buildCertIcons() {
@@ -345,10 +269,31 @@ posts.forEach(p => {
 /* ============================================================
    CONTACT FORM
    ============================================================ */
-document.getElementById('contactForm').addEventListener('submit', e => {
+document.getElementById('contactForm').addEventListener('submit', async e => {
   e.preventDefault();
-  document.getElementById('contactForm').style.display = 'none';
-  document.getElementById('contactSuccess').classList.add('visible');
+  const form = e.target;
+  const btn  = form.querySelector('[type=submit]');
+  btn.disabled = true;
+  btn.textContent = 'Enviando…';
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      form.style.display = 'none';
+      document.getElementById('contactSuccess').classList.add('visible');
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Solicitar Cotización';
+      alert('Error al enviar. Por favor contáctanos por WhatsApp.');
+    }
+  } catch {
+    btn.disabled = false;
+    btn.textContent = 'Solicitar Cotización';
+    alert('Sin conexión. Por favor contáctanos por WhatsApp.');
+  }
 });
 
 /* ============================================================
