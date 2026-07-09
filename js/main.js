@@ -133,9 +133,7 @@ function animateCount(el) {
    SERVICE GRID
    ============================================================ */
 const services = [
-  { title:'Sanitización',         desc:'Desinfección de superficies contra virus y bacterias.' },
-  { title:'Control de mosquitos', desc:'Nebulización de exteriores y eliminación de criaderos.' },
-  { title:'Manejo integrado',     desc:'Programas preventivos con monitoreo continuo.' },
+  { title:'Desratización Pre-Demolición', desc:'Realizamos el servicio de desratización previo a la demolición, cumpliendo con la normativa vigente y entregando la documentación requerida por la SEREMI de Salud.' },
 ];
 
 const serviceGrid = document.getElementById('serviceGrid');
@@ -145,8 +143,11 @@ services.forEach((s, i) => {
   const colors = [PIX[i%3], PIX[(i+1)%3], PIX[(i+2)%3], PIX[i%3]];
   card.innerHTML =
     `<div class="service-card__icon">${colors.map(c=>`<div style="background:${c}"></div>`).join('')}</div>` +
-    `<div class="service-card__title">${s.title}</div>` +
-    `<div class="service-card__desc">${s.desc}</div>`;
+    `<div class="service-card__body">` +
+      `<div class="service-card__title">${s.title}</div>` +
+      `<div class="service-card__desc">${s.desc}</div>` +
+      `<a href="#contacto" class="service-card__link">Leer más →</a>` +
+    `</div>`;
   serviceGrid.appendChild(card);
 });
 
@@ -205,16 +206,17 @@ renderProceso();
    REASONS
    ============================================================ */
 const reasons = [
-  { n:'01', color:PINK,   title:'Certificados',        desc:'Resolución sanitaria vigente y personal acreditado para cada servicio.' },
-  { n:'02', color:MID,    title:'Técnicos capacitados', desc:'Personal con formación específica en manejo seguro de productos fitosanitarios.' },
-  { n:'03', color:PURPLE, title:'Garantía real',        desc:'Si la plaga vuelve dentro del periodo, regresamos sin costo.' },
-  { n:'04', color:PINK,   title:'Respuesta 24h',        desc:'Atendemos emergencias el mismo día que nos contactas.' },
+  { n:'01', color:PINK,   title:'Resolución Sanitaria', desc:'Trabajamos con resolución sanitaria vigente y entregamos el certificado de servicio al finalizar cada trabajo.' },
+  { n:'02', color:MID,    title:'Técnicos capacitados',  desc:'Personal con formación específica en el manejo seguro de productos fitosanitarios autorizados.' },
+  { n:'03', color:PURPLE, title:'Experiencia comprobada',desc:'Más de X años protegiendo hogares y empresas en Santiago y alrededores.' },
+  { n:'04', color:PINK,   title:'Productos autorizados', desc:'Utilizamos únicamente productos aprobados por la normativa sanitaria vigente.' },
+  { n:'05', color:MID,    title:'Respuesta rápida',      desc:'Atención ágil en Santiago y alrededores. Coordinamos visita el mismo día que nos contactas.' },
 ];
 
 const reasonsGrid = document.getElementById('reasonsGrid');
 reasons.forEach(r => {
   const card = document.createElement('div');
-  card.className = 'reason-card pc-reveal pc-lift';
+  card.className = 'reason-card pc-reveal';
   card.innerHTML =
     `<div class="reason-card__num" style="color:${r.color}">${r.n}</div>
      <div>
@@ -228,21 +230,20 @@ reasons.forEach(r => {
    ÁREAS
    ============================================================ */
 const areas = [
-  'Hogares y residencias','Restaurantes y cocinas','Industria y bodegas','Oficinas corporativas',
-  'Hoteles y turismo','Escuelas','Hospitales y clínicas','Comercios y locales',
+  { title:'Hogares',      color:PINK,   desc:'Protege a tu familia y mascotas con un servicio de control de plagas seguro y efectivo. Eliminamos la infestación y ayudamos a prevenir su reaparición para mantener tu hogar libre de riesgos.' },
+  { title:'Empresas',     color:MID,    desc:'Ayudamos a mantener espacios de trabajo seguros y libres de plagas, ofreciendo soluciones adaptadas a cada tipo de empresa y cumpliendo con la normativa sanitaria vigente.' },
+  { title:'Restaurantes', color:PURPLE, desc:'La higiene y el control de plagas son fundamentales para proteger la salud de tus clientes y la reputación de tu negocio. Aplicamos tratamientos eficaces para mantener tu establecimiento en óptimas condiciones.' },
 ];
 
 const areasGrid = document.getElementById('areasGrid');
-areas.forEach((name, i) => {
+areas.forEach(a => {
   const item = document.createElement('div');
-  item.className = 'area-item pc-reveal';
-  const dot = document.createElement('span');
-  dot.className = 'area-dot';
-  dot.style.background = PIX[i % 3];
-  const label = document.createElement('span');
-  label.textContent = name;
-  item.appendChild(dot);
-  item.appendChild(label);
+  item.className = 'area-card pc-reveal pc-lift';
+  item.innerHTML =
+    `<div class="area-card__dot" style="background:${a.color}"></div>` +
+    `<div class="area-card__title">${a.title}</div>` +
+    `<div class="area-card__desc">${a.desc}</div>` +
+    `<a href="#contacto" class="btn btn--dark btn--sm area-card__cta">Contáctanos</a>`;
   areasGrid.appendChild(item);
 });
 
