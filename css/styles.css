@@ -385,10 +385,13 @@ h1, h2 { margin: 0; }
   margin-bottom: 16px;
 }
 .feature-card {
-  background: #171717;
+  background: #fff;
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 26px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .feature-card__art {
   height: 150px;
@@ -396,13 +399,14 @@ h1, h2 { margin: 0; }
   align-items: center;
   justify-content: center;
   margin-bottom: 18px;
+  flex-shrink: 0;
 }
 .feature-card__footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   gap: 14px;
-  margin: 0 -26px -26px;
+  margin: auto -26px -26px;
   padding: 20px 26px;
 }
 .feature-card__footer--pink { background: var(--pink); }
