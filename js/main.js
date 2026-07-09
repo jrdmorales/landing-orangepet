@@ -3,7 +3,7 @@
 /* ============================================================
    COLOR PALETTE — Calido
    ============================================================ */
-const STOPS = [[245,180,130],[240,150,150],[220,150,190]];
+const STOPS = [[245,124,0],[255,152,0],[230,81,0]];
 
 function col(t, stops) {
   const [a, b, f] = t < 0.5
@@ -133,7 +133,6 @@ function animateCount(el) {
    SERVICE GRID
    ============================================================ */
 const services = [
-  { title:'Control de termitas',  desc:'Detección y eliminación de colonias que dañan tu estructura.' },
   { title:'Sanitización',         desc:'Desinfección de superficies contra virus y bacterias.' },
   { title:'Control de mosquitos', desc:'Nebulización de exteriores y eliminación de criaderos.' },
   { title:'Manejo integrado',     desc:'Programas preventivos con monitoreo continuo.' },
@@ -158,9 +157,8 @@ const stepData = [
   { name:'Inspección',  dot:PINK,   detail:'Recorremos cada área de tu propiedad para identificar el tipo de plaga, sus focos y las condiciones que la atraen.' },
   { name:'Diagnóstico', dot:MID,    detail:'Elaboramos un informe con el nivel de infestación, los riesgos y el plan de tratamiento más adecuado para tu caso.' },
   { name:'Tratamiento', dot:PURPLE, detail:'Aplicamos productos certificados con técnicas dirigidas, minimizando el impacto en tus actividades diarias.' },
-  { name:'Sellado',     dot:PINK,   detail:'Cerramos grietas, accesos y puntos de entrada para evitar que las plagas regresen a tu espacio.' },
-  { name:'Seguimiento', dot:MID,    detail:'Programamos visitas de control para verificar los resultados y ajustar el tratamiento cuando es necesario.' },
-  { name:'Garantía',    dot:PURPLE, detail:'Respaldamos nuestro trabajo: si la plaga reaparece dentro del periodo acordado, volvemos sin costo.' },
+  { name:'Seguimiento', dot:PINK,   detail:'Programamos visitas de control para verificar los resultados y ajustar el tratamiento cuando es necesario.' },
+  { name:'Garantía',    dot:MID,    detail:'Respaldamos nuestro trabajo: si la plaga reaparece dentro del periodo acordado, volvemos sin costo.' },
 ];
 
 let activeStep = 0;
@@ -196,7 +194,7 @@ function renderProceso() {
   ).join('');
 
   document.getElementById('procesoInfo').innerHTML =
-    `<div class="proceso-info__label">PASO ${pad2(activeStep)} / 06</div>
+    `<div class="proceso-info__label">PASO ${pad2(activeStep)} / 05</div>
      <div class="proceso-info__title">${st.name}</div>
      <div class="proceso-info__desc">${st.detail}</div>
      <div class="proceso-bars">${bars}</div>`;
@@ -207,10 +205,10 @@ renderProceso();
    REASONS
    ============================================================ */
 const reasons = [
-  { n:'01', color:PINK,   title:'Certificados',    desc:'Licencia sanitaria y personal capacitado y acreditado.' },
-  { n:'02', color:MID,    title:'Eco-responsables',desc:'Productos de baja toxicidad, seguros para niños y mascotas.' },
-  { n:'03', color:PURPLE, title:'Garantía real',   desc:'Si la plaga vuelve dentro del periodo, regresamos sin costo.' },
-  { n:'04', color:PINK,   title:'Respuesta 24h',   desc:'Atendemos emergencias el mismo día que nos contactas.' },
+  { n:'01', color:PINK,   title:'Certificados',        desc:'Resolución sanitaria vigente y personal acreditado para cada servicio.' },
+  { n:'02', color:MID,    title:'Técnicos capacitados', desc:'Personal con formación específica en manejo seguro de productos fitosanitarios.' },
+  { n:'03', color:PURPLE, title:'Garantía real',        desc:'Si la plaga vuelve dentro del periodo, regresamos sin costo.' },
+  { n:'04', color:PINK,   title:'Respuesta 24h',        desc:'Atendemos emergencias el mismo día que nos contactas.' },
 ];
 
 const reasonsGrid = document.getElementById('reasonsGrid');
@@ -310,6 +308,25 @@ posts.forEach(p => {
      <div class="blog-card__desc">${p.desc}</div>`;
   blogGrid.appendChild(a);
 });
+
+/* ============================================================
+   CERT BADGE ICONS
+   ============================================================ */
+(function buildCertIcons() {
+  const patterns = [
+    [PINK, MID, PURPLE, PINK, MID, PURPLE, PINK, MID, PURPLE],
+    [MID, PURPLE, PINK, PURPLE, PINK, MID, PINK, MID, PURPLE],
+  ];
+  ['certIcon1','certIcon2'].forEach((id, idx) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    patterns[idx].forEach(bg => {
+      const d = document.createElement('div');
+      d.style.background = bg;
+      el.appendChild(d);
+    });
+  });
+})();
 
 /* ============================================================
    SUCCESS ICON
