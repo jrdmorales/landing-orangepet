@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PlagaCero — Control de Plagas Profesional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Hanken+Grotesque:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar__logo">
+      <div class="logo-grid" id="logoGrid"></div>
+      <span class="logo-text">Plaga<span class="logo-accent">Cero</span></span>
+    </div>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="navbar__links" id="navLinks">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#areas">Áreas</a>
+      <a href="#blog">Blog</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a href="#contacto" class="btn btn--dark navbar__cta">Cotiza gratis</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero__blocks" id="heroBlocks"></div>
+    <div class="hero__content pc-reveal">
+      <h1 class="hero__title">
+        Adiós a las plagas.<br>
+        Hola a la <span class="hero__gradient">tranquilidad.</span>
+      </h1>
+      <p class="hero__desc">Control de plagas profesional para hogares y empresas. Inspección, tratamiento y seguimiento con productos certificados y técnicos especializados.</p>
+      <div class="hero__actions">
+        <a href="#contacto" class="btn btn--dark">Solicitar visita</a>
+        <a href="#servicios" class="btn btn--outline">Ver servicios</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MARCAS + STATS -->
+  <section class="brands-stats pc-reveal" id="marcas">
+    <p class="section-label section-label--light section-label--center">TRABAJAMOS CON LAS MEJORES MARCAS</p>
+    <div class="marquee-wrap">
+      <div class="pc-marquee" id="brandsMarquee"></div>
+    </div>
+    <div class="stats-grid" id="statsGrid"></div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="section" id="servicios">
+    <div class="servicios__header">
+      <h2 class="servicios__title">En PlagaCero creemos que el control de plagas debe ser <span class="text-muted">simple, seguro y definitivo.</span></h2>
+      <p class="servicios__sub">Por eso diseñamos un servicio integral que va más allá de fumigar.</p>
+    </div>
+    <div class="feature-cards">
+      <div class="feature-card pc-reveal pc-lift">
+        <div class="feature-card__art" id="roachArt"></div>
+        <div class="feature-card__footer feature-card__footer--pink">
+          <div>
+            <div class="feature-card__name">Fumigación y desinsectación</div>
+            <div class="feature-card__desc">Cucarachas, hormigas, moscas y más. Aplicación dirigida sin desalojar tu espacio.</div>
+          </div>
+          <a href="#contacto" class="btn btn--dark btn--sm">Cotizar</a>
+        </div>
+      </div>
+      <div class="feature-card pc-reveal pc-lift">
+        <div class="feature-card__art" id="ratArt"></div>
+        <div class="feature-card__footer feature-card__footer--blue">
+          <div>
+            <div class="feature-card__name">Control de roedores</div>
+            <div class="feature-card__desc">Desratización con estaciones seguras y monitoreo permanente de puntos críticos.</div>
+          </div>
+          <a href="#contacto" class="btn btn--dark btn--sm">Cotizar</a>
+        </div>
+      </div>
+    </div>
+    <div class="service-grid" id="serviceGrid"></div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="section" id="nosotros">
+    <div class="section__center-header">
+      <p class="section-label section-label--accent">NUESTRO PROCESO</p>
+      <h2 class="section__title">Un método comprobado, <span class="text-muted">paso a paso</span></h2>
+    </div>
+    <div class="proceso-grid">
+      <div class="proceso-visual" id="procesoVisual"></div>
+      <div class="proceso-info" id="procesoInfo"></div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ PREFERIRNOS -->
+  <section class="section">
+    <div class="section__center-header">
+      <p class="section-label section-label--accent">POR QUÉ PREFERIRNOS</p>
+      <h2 class="section__title">Más que fumigar, protegemos tu espacio</h2>
+    </div>
+    <div class="reasons-grid" id="reasonsGrid"></div>
+  </section>
+
+  <!-- ÁREAS -->
+  <section class="section" id="areas">
+    <div class="areas-layout">
+      <div class="areas-text">
+        <p class="section-label section-label--accent">ÁREAS DE APLICACIÓN</p>
+        <h2 class="section__title">Cubrimos cada rincón donde una plaga puede esconderse</h2>
+        <p class="areas-desc">Diseñamos protocolos específicos para cada tipo de espacio, cumpliendo la normativa sanitaria vigente.</p>
+      </div>
+      <div class="areas-grid" id="areasGrid"></div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="section">
+    <div class="section__center-header">
+      <p class="section-label section-label--accent">NUESTRO TRABAJO</p>
+      <h2 class="section__title">Resultados que se ven</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-main pc-reveal"><div class="gallery-placeholder">Equipo en acción</div></div>
+      <div class="gallery-sm pc-reveal"><div class="gallery-placeholder">Antes</div></div>
+      <div class="gallery-sm pc-reveal"><div class="gallery-placeholder">Después</div></div>
+      <div class="gallery-wide pc-reveal"><div class="gallery-placeholder">Equipo y productos</div></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonios pc-reveal">
+    <p class="section-label section-label--light section-label--center">CLIENTES QUE CONFÍAN</p>
+    <div class="testimonios__body">
+      <p class="testimonios__quote" id="testiQuote"></p>
+      <div class="testimonios__author">
+        <div class="testimonios__avatar gradient-bg"></div>
+        <div>
+          <div class="testimonios__name" id="testiName"></div>
+          <div class="testimonios__role" id="testiRole"></div>
+        </div>
+      </div>
+      <div class="testimonios__dots" id="testiDots"></div>
+    </div>
+    <div class="marquee-wrap--border">
+      <div class="pc-marquee" id="clientsMarquee"></div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="section" id="blog">
+    <div class="blog__header">
+      <div>
+        <p class="section-label section-label--accent">BLOG</p>
+        <h2 class="section__title">Consejos para mantener tu espacio libre de plagas</h2>
+      </div>
+      <a class="link blog__more" href="#blog">Ver todo →</a>
+    </div>
+    <div class="blog-grid" id="blogGrid"></div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <div class="contact-card pc-reveal">
+      <div class="contact-info gradient-bg">
+        <p class="section-label">CONTACTO</p>
+        <h2 class="contact-info__title">Agenda tu inspección gratuita hoy mismo</h2>
+        <p class="contact-info__desc">Respondemos en menos de 24 horas. Sin compromiso.</p>
+        <ul class="contact-list">
+          <li><span class="dot-sq"></span><span>+52 55 1234 5678</span></li>
+          <li><span class="dot-sq"></span><span>hola@plagacero.com</span></li>
+          <li><span class="dot-sq"></span><span>Lun a Sáb · 8:00 – 19:00</span></li>
+        </ul>
+      </div>
+      <div class="contact-form-wrap">
+        <div class="contact-success" id="contactSuccess">
+          <div class="success-icon" id="successIcon"></div>
+          <div class="contact-success__title">¡Mensaje enviado!</div>
+          <div class="contact-success__desc">Te contactaremos muy pronto.</div>
+        </div>
+        <form id="contactForm">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input required type="text" placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label>Teléfono o correo</label>
+            <input required type="text" placeholder="¿Cómo te contactamos?">
+          </div>
+          <div class="form-group">
+            <label>¿Qué necesitas?</label>
+            <textarea rows="3" placeholder="Cuéntanos tu situación..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--dark btn--full">Solicitar inspección gratis</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-grid logo-grid--sm" id="footerLogoGrid"></div>
+          <span class="logo-text logo-text--sm">Plaga<span class="logo-accent">Cero</span></span>
+        </div>
+        <p class="footer-desc">Control de plagas profesional, certificado y responsable con el medio ambiente.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col__head">Servicios</div>
+        <a href="#" class="footer-link">Fumigación</a>
+        <a href="#" class="footer-link">Roedores</a>
+        <a href="#" class="footer-link">Termitas</a>
+        <a href="#" class="footer-link">Sanitización</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col__head">Empresa</div>
+        <a href="#" class="footer-link">Nosotros</a>
+        <a href="#" class="footer-link">Áreas</a>
+        <a href="#" class="footer-link">Clientes</a>
+        <a href="#" class="footer-link">Blog</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col__head">Contacto</div>
+        <a href="#" class="footer-link">Cotizar</a>
+        <a href="#" class="footer-link">WhatsApp</a>
+        <a href="#" class="footer-link">Emergencias</a>
+        <a href="#" class="footer-link">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 PlagaCero. Todos los derechos reservados.</span>
+      <span class="footer-made">HECHO CON CUIDADO</span>
+    </div>
+  </footer>
+
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
