@@ -357,7 +357,7 @@ h1, h2 { margin: 0; }
 }
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   padding: 8px 0;
 }
 .stat-item {
@@ -1106,7 +1106,7 @@ h1, h2 { margin: 0; }
 
 /* --- Tablet landscape (≤1024px) --- */
 @media (max-width: 1024px) {
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
   .stat-item:nth-child(4) { border-left: none; }
 
   .elegir-layout { grid-template-columns: 1fr; gap: 32px; }
@@ -1157,7 +1157,7 @@ h1, h2 { margin: 0; }
 
   /* Brands */
   .brands-stats { padding: 28px 24px 8px; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
   .stat-item { padding: 18px 12px; }
   .stat-num { font-size: 24px; }
 

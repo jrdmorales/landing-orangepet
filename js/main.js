@@ -84,13 +84,26 @@ buildCreature(document.getElementById('ratArt'), [
 ], PURPLE);
 
 /* ============================================================
+   BRANDS MARQUEE
+   ============================================================ */
+const brands = ['BAYER','BASF','SYNGENTA','SUMITOMO','DETIA','EFEKTO','BAYER','BASF','SYNGENTA','SUMITOMO','DETIA','EFEKTO'];
+const brandsEl = document.getElementById('brandsMarquee');
+brands.forEach(b => {
+  const s = document.createElement('span');
+  s.className = 'brand-item';
+  s.textContent = b;
+  brandsEl.appendChild(s);
+});
+
+/* ============================================================
    STATS
    ============================================================ */
 const statsData = [
-  { num: '+150', to: 150, pre:'+', suf:'',  dec:0, label:'Hogares protegidos' },
-  { num: '+100', to: 100, pre:'+', suf:'',  dec:0, label:'Empresas atendidas' },
-  { num: '98%',  to: 98,  pre:'',  suf:'%', dec:0, label:'Efectividad comprobada' },
-  { num: '24h',  to: 24,  pre:'',  suf:'h', dec:0, label:'Tiempo de respuesta' },
+  { num: '+150', to: 150, pre:'+', suf:'',   dec:0, label:'Hogares protegidos' },
+  { num: '+100', to: 100, pre:'+', suf:'',   dec:0, label:'Empresas atendidas' },
+  { num: '98%',  to: 98,  pre:'',  suf:'%',  dec:0, label:'Efectividad comprobada' },
+  { num: '4.9',  to: 4.9, pre:'',  suf:'/5', dec:1, label:'Valoración promedio' },
+  { num: '24h',  to: 24,  pre:'',  suf:'h',  dec:0, label:'Tiempo de respuesta' },
 ];
 
 const statsGrid = document.getElementById('statsGrid');
@@ -233,6 +246,49 @@ areas.forEach(a => {
     `<a href="#contacto" class="btn btn--dark btn--sm area-card__cta">Contáctanos</a>`;
   areasGrid.appendChild(item);
 });
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+const testiData = [
+  { quote:'El equipo fue muy responsable. Nos explicaron el proceso, los productos que usarían y nos entregaron el certificado al terminar. Ideal para nuestro restaurante.', author:'María González', role:'Propietaria · Restaurante en Ñuñoa' },
+  { quote:'Teníamos una infestación seria de ratas en la bodega y lo resolvieron en dos visitas. Muy profesionales y puntuales. Sin interrumpir la operación.', author:'Roberto Muñoz', role:'Supervisor de Logística · Empresa de Distribución' },
+  { quote:'Rápidos y efectivos. Agendamos el mismo día que llamé y resolvieron el problema de cucarachas sin que tuviéramos que cerrar ni un día.', author:'Carmen Vera', role:'Administradora · Edificio Residencial Las Condes' },
+  { quote:'Lo que más valoré fue la transparencia: nos mostraron el estado de las trampas, explicaron los resultados y coordinaron seguimiento sin cobro extra.', author:'Felipe Soto', role:'Encargado de Mantención · Planta Industrial' },
+  { quote:'Contratamos el servicio para nuestro colegio y fue impecable. Cumplieron la normativa, entregaron toda la documentación y los niños no se enteraron de nada.', author:'Ana Pérez', role:'Directora · Establecimiento Educacional' },
+];
+
+let activeTesti = 0;
+
+function renderTesti() {
+  const t = testiData[activeTesti];
+  document.getElementById('testiQuote').textContent = `"${t.quote}"`;
+  document.getElementById('testiName').textContent  = t.author;
+  document.getElementById('testiRole').textContent  = t.role;
+  const dotsEl = document.getElementById('testiDots');
+  dotsEl.innerHTML = '';
+  testiData.forEach((_, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'testi-dot' + (i === activeTesti ? ' active' : '');
+    btn.setAttribute('aria-label', `Testimonio ${i+1}`);
+    btn.addEventListener('click', () => { activeTesti = i; renderTesti(); });
+    dotsEl.appendChild(btn);
+  });
+}
+renderTesti();
+
+let testiTimer;
+const testiSection = document.getElementById('testimonios');
+const testiObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      testiTimer = setInterval(() => { activeTesti = (activeTesti + 1) % testiData.length; renderTesti(); }, 5000);
+    } else {
+      clearInterval(testiTimer);
+    }
+  });
+}, { threshold: 0.2 });
+if (testiSection) testiObserver.observe(testiSection);
 
 /* ============================================================
    CERT BADGE ICONS
