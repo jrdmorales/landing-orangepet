@@ -1050,7 +1050,7 @@ h1, h2 { margin: 0; }
 @media (max-width: 768px) {
 
   /* Navbar mobile */
-  .navbar { position: relative; flex-wrap: wrap; }
+  .navbar { flex-wrap: wrap; }
   .navbar__hamburger { display: flex; }
   .navbar__actions { display: none; }
   .navbar__links {
