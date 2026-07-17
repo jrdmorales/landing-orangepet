@@ -55,35 +55,6 @@ buildLogoGrid(document.getElementById('footerLogoGrid'));
 })();
 
 /* ============================================================
-   PIXEL ART CREATURES
-   ============================================================ */
-function buildCreature(container, bitmap, color) {
-  const cols = bitmap[0].length;
-  const grid = document.createElement('div');
-  grid.className = 'pixel-art';
-  grid.style.gridTemplateColumns = `repeat(${cols},1fr)`;
-  grid.style.width = `${cols * 11}px`;
-  bitmap.forEach(row => {
-    [...row].forEach(ch => {
-      const d = document.createElement('div');
-      d.style.cssText = `background:${ch==='1'?color:'transparent'};aspect-ratio:1;border-radius:1px`;
-      grid.appendChild(d);
-    });
-  });
-  container.appendChild(grid);
-}
-
-buildCreature(document.getElementById('roachArt'), [
-  '00100000100','00010001000','00111111100','01101110110',
-  '11111111111','10111111101','10100000101','00011011000'
-], PINK);
-
-buildCreature(document.getElementById('ratArt'), [
-  '00100000100','10010001001','10111111101','11100111011',
-  '11111111111','01111111110','00100000100','01000000010'
-], PURPLE);
-
-/* ============================================================
    BRANDS MARQUEE
    ============================================================ */
 const brands = ['BAYER','BASF','SYNGENTA','SUMITOMO','DETIA','EFEKTO','BAYER','BASF','SYNGENTA','SUMITOMO','DETIA','EFEKTO'];
@@ -130,25 +101,24 @@ function animateCount(el) {
 }
 
 /* ============================================================
-   SERVICE GRID
+   SERVICIOS (3 tarjetas)
    ============================================================ */
 const services = [
-  { title:'Desratización Pre-Demolición', desc:'Realizamos el servicio de desratización previo a la demolición, cumpliendo con la normativa vigente y entregando la documentación requerida por la SEREMI de Salud.' },
+  { title:'Desratización', desc:'Control profesional de roedores para hogares y empresas.' },
+  { title:'Desinsectación', desc:'Control de cucarachas, arañas, hormigas, pulgas y otras plagas.' },
+  { title:'Sanitización Ambiental', desc:'Desinfección profesional para proteger hogares, oficinas e industrias.' },
 ];
 
-const serviceGrid = document.getElementById('serviceGrid');
+const services3Grid = document.getElementById('services3Grid');
 services.forEach((s, i) => {
   const card = document.createElement('div');
-  card.className = 'service-card pc-reveal pc-lift';
-  const colors = [PIX[i%3], PIX[(i+1)%3], PIX[(i+2)%3], PIX[i%3]];
+  card.className = 'service3-card pc-reveal pc-lift';
+  const colors = [PIX[i%3], PIX[(i+1)%3], PIX[(i+2)%3], PIX[i%3], PIX[(i+1)%3], PIX[(i+2)%3], PIX[i%3], PIX[(i+1)%3], PIX[(i+2)%3]];
   card.innerHTML =
-    `<div class="service-card__icon">${colors.map(c=>`<div style="background:${c}"></div>`).join('')}</div>` +
-    `<div class="service-card__body">` +
-      `<div class="service-card__title">${s.title}</div>` +
-      `<div class="service-card__desc">${s.desc}</div>` +
-      `<a href="#contacto" class="service-card__link">Leer más →</a>` +
-    `</div>`;
-  serviceGrid.appendChild(card);
+    `<div class="service3-card__icon">${colors.map(c=>`<div style="background:${c}"></div>`).join('')}</div>` +
+    `<div class="service3-card__title">${s.title}</div>` +
+    `<div class="service3-card__desc">${s.desc}</div>`;
+  services3Grid.appendChild(card);
 });
 
 /* ============================================================
@@ -159,7 +129,6 @@ const stepData = [
   { name:'Diagnóstico', dot:MID,    detail:'Elaboramos un informe con el nivel de infestación, los riesgos y el plan de tratamiento más adecuado para tu caso.' },
   { name:'Tratamiento', dot:PURPLE, detail:'Aplicamos productos certificados con técnicas dirigidas, minimizando el impacto en tus actividades diarias.' },
   { name:'Seguimiento', dot:PINK,   detail:'Programamos visitas de control para verificar los resultados y ajustar el tratamiento cuando es necesario.' },
-  { name:'Garantía',    dot:MID,    detail:'Respaldamos nuestro trabajo: si la plaga reaparece dentro del periodo acordado, volvemos sin costo.' },
 ];
 
 let activeStep = 0;
@@ -195,7 +164,7 @@ function renderProceso() {
   ).join('');
 
   document.getElementById('procesoInfo').innerHTML =
-    `<div class="proceso-info__label">PASO ${pad2(activeStep)} / 05</div>
+    `<div class="proceso-info__label">PASO ${pad2(activeStep)} / 04</div>
      <div class="proceso-info__title">${st.name}</div>
      <div class="proceso-info__desc">${st.detail}</div>
      <div class="proceso-bars">${bars}</div>`;
@@ -206,11 +175,12 @@ renderProceso();
    REASONS
    ============================================================ */
 const reasons = [
-  { n:'01', color:PINK,   title:'Resolución Sanitaria', desc:'Trabajamos con resolución sanitaria vigente y entregamos el certificado de servicio al finalizar cada trabajo.' },
-  { n:'02', color:MID,    title:'Técnicos capacitados',  desc:'Personal con formación específica en el manejo seguro de productos fitosanitarios autorizados.' },
-  { n:'03', color:PURPLE, title:'Experiencia comprobada',desc:'Historial comprobado en control de plagas para hogares y empresas en Santiago y alrededores.' },
-  { n:'04', color:PINK,   title:'Productos autorizados', desc:'Utilizamos únicamente productos aprobados por la normativa sanitaria vigente.' },
-  { n:'05', color:MID,    title:'Respuesta rápida',      desc:'Atención ágil en Santiago y alrededores. Coordinamos visita el mismo día que nos contactas.' },
+  { color:PINK,   title:'Productos autorizados', desc:'Utilizamos únicamente productos aprobados por la normativa sanitaria vigente.' },
+  { color:MID,    title:'Técnicos capacitados',  desc:'Personal con formación específica en el manejo seguro de productos fitosanitarios.' },
+  { color:PURPLE, title:'Atención rápida',       desc:'Coordinamos visita el mismo día que nos contactas.' },
+  { color:PINK,   title:'Seguimiento preventivo',desc:'Visitas de control programadas para evitar que la plaga vuelva a aparecer.' },
+  { color:MID,    title:'Planes para empresas',  desc:'Programas de mantención adaptados a cada tipo de negocio.' },
+  { color:PURPLE, title:'Cobertura en la Región Metropolitana', desc:'Atendemos hogares, empresas e industrias en toda la Región Metropolitana.' },
 ];
 
 const reasonsGrid = document.getElementById('reasonsGrid');
@@ -218,7 +188,9 @@ reasons.forEach(r => {
   const card = document.createElement('div');
   card.className = 'reason-card pc-reveal';
   card.innerHTML =
-    `<div class="reason-card__num" style="color:${r.color}">${r.n}</div>
+    `<div class="reason-card__check" style="color:${r.color}">
+       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+     </div>
      <div>
        <div class="reason-card__title">${r.title}</div>
        <div class="reason-card__desc">${r.desc}</div>
@@ -342,7 +314,7 @@ document.getElementById('contactForm').addEventListener('submit', async e => {
       document.getElementById('contactSuccess').classList.add('visible');
     } else {
       btn.disabled = false;
-      btn.textContent = 'Solicitar Cotización';
+      btn.textContent = 'Enviar Solicitud';
       alert('Error al enviar. Por favor contáctanos por WhatsApp.');
     }
   } catch {
