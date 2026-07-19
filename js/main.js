@@ -209,7 +209,7 @@
   }
 
   function countUp(el, target, original) {
-    var start = null, duration = 1600;
+    var start = null, duration = 3200;
     function step(ts) {
       if (!start) start = ts;
       var p = Math.min((ts - start) / duration, 1);
