@@ -25,25 +25,26 @@
     </button>
     <nav id="main-nav">
       <a href="#" class="active">INICIO</a>
-      <a href="#servicios">SERVICIOS</a>
-      <a href="#nosotros">NOSOTROS</a>
-      <a href="#preferirnos">¿POR QUÉ PREFERIRNOS?</a>
-      <a href="#metodo">MÉTODO DE TRABAJO</a>
-      <a href="#sectores">SECTORES</a>
+      <div class="nav-dropdown">
+        <button class="nav-drop-btn" aria-expanded="false">SERVICIOS <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="#servicios">Nuestros Servicios</a>
+          <a href="#sectores">Sectores</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-drop-btn" aria-expanded="false">EMPRESA <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="#nosotros">Nosotros</a>
+          <a href="#preferirnos">¿Por qué preferirnos?</a>
+          <a href="#metodo">Método de trabajo</a>
+        </div>
+      </div>
       <a href="#testimonios">TESTIMONIOS</a>
       <a href="#contacto">CONTACTO</a>
     </nav>
     <div class="top-actions">
-      <div class="phone-chip">
-        <div class="icon-circle">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 2.9a2 2 0 0 1-.4 2.1L8 10.1a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.4 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
-        </div>
-        <div>
-          <div class="num">+56 9 1234 5678</div>
-          <div class="sub">Llámanos ahora</div>
-        </div>
-      </div>
-      <a href="#contacto" class="btn btn-orange">SOLICITA TU INSPECCIÓN</a>
+<a href="#contacto" class="btn btn-orange">SOLICITA TU INSPECCIÓN</a>
     </div>
   </div>
 </header>
@@ -60,10 +61,6 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.6 14.3c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5.2.5.8 1.9.8 2 .1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.6.6-.2.2-.4.4-.2.8.2.4.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.4.2.6.1.8-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2 1 2.3 1.1.3.2.5.3.6.4.1.2.1.9-.1 1.5z"/></svg>
           ESCRÍBENOS POR WHATSAPP
         </a>
-        <a href="#" class="btn btn-outline">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 2.9a2 2 0 0 1-.4 2.1L8 10.1a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.4 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
-          LLÁMANOS
-        </a>
         <a href="#servicios" class="btn btn-dark">VER SERVICIOS</a>
       </div>
       <div class="cert-bar">
@@ -78,26 +75,31 @@
         </div>
       </div>
     </div>
-    <div class="hero-info-box">
-      <div class="hero-info-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
-        Personal capacitado
+  </div>
+</section>
+
+<div class="stats-bar-section">
+  <div class="container">
+    <div class="stats-bar">
+      <div class="stat-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M2 20v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/><circle cx="17" cy="8" r="2.7"/><path d="M17 5.3A2.7 2.7 0 1 1 17 10.7"/></svg>
+        <div><div class="num">+1.000</div><div class="lbl">Servicios realizados</div></div>
       </div>
-      <div class="hero-info-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-4z"/></svg>
-        Productos autorizados
+      <div class="stat-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+        <div><div class="num">+250</div><div class="lbl">Clientes satisfechos</div></div>
       </div>
-      <div class="hero-info-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 3v4h6V3M9 12h6M9 16h6"/></svg>
-        Protocolos profesionales
+      <div class="stat-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg>
+        <div><div class="num">98%</div><div class="lbl">Índice de satisfacción</div></div>
       </div>
-      <div class="hero-info-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        Atención rápida
+      <div class="stat-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 7v5l3 3"/></svg>
+        <div><div class="num">24/7</div><div class="lbl">Atención todo el año</div></div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- ================= SERVICIOS ================= -->
 <section class="section" id="servicios">
@@ -207,31 +209,15 @@
         </div>
       </div>
     </div>
-    <div class="stats-bar">
-      <div class="stat-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M2 20v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/><circle cx="17" cy="8" r="2.7"/><path d="M17 5.3A2.7 2.7 0 1 1 17 10.7"/></svg>
-        <div><div class="num">+1.000</div><div class="lbl">Servicios realizados</div></div>
       </div>
-      <div class="stat-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
-        <div><div class="num">+250</div><div class="lbl">Clientes satisfechos</div></div>
-      </div>
-      <div class="stat-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg>
-        <div><div class="num">98%</div><div class="lbl">Índice de satisfacción</div></div>
-      </div>
-      <div class="stat-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 7v5l3 3"/></svg>
-        <div><div class="num">24/7</div><div class="lbl">Atención todo el año</div></div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- ================= RAT BANNER ================= -->
 <section class="rat-banner">
-  <div class="container" style="position:relative;padding:0;">
+  <div class="container">
+    <div class="banner-wrap">
     <button class="arrow left" aria-label="Anterior" onclick="moveSlide(-1)">‹</button>
+    <div class="rat-banner-card">
     <div class="rat-banner-inner slide active">
       <div class="slide-visual"><svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustracion de un raton">
  <defs>
@@ -306,10 +292,6 @@
  </g>
 </svg></div>
       <div class="msg">Las plagas pueden causar daños, contagiar enfermedades y afectar <span class="hl">tu tranquilidad.</span><br><span style="font-size:14px;color:#aaa;font-weight:400;">Nosotros tenemos la solución profesional.</span></div>
-      <a href="#" class="call-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:22px;flex-shrink:0;"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 2.9a2 2 0 0 1-.4 2.1L8 10.1a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.4 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
-        <div><div class="num">+56 9 1234 5678</div><div class="sub">Llámanos ahora</div></div>
-      </a>
     </div>
     <div class="rat-banner-inner slide">
       <div class="slide-visual"><svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustracion de una cucaracha">
@@ -358,10 +340,6 @@
  </g>
 </svg></div>
       <div class="msg">Cucarachas, chinches y hormigas se reproducen a gran velocidad. <span class="hl">Actúa a tiempo.</span><br><span style="font-size:14px;color:#aaa;font-weight:400;">Desinsectación efectiva para hogares y empresas.</span></div>
-      <a href="#" class="call-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:22px;flex-shrink:0;"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 2.9a2 2 0 0 1-.4 2.1L8 10.1a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.4 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
-        <div><div class="num">+56 9 1234 5678</div><div class="sub">Llámanos ahora</div></div>
-      </a>
     </div>
     <div class="rat-banner-inner slide">
       <div class="slide-visual"><svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustracion de sanitizacion">
@@ -421,10 +399,6 @@
  <ellipse cx="230" cy="292" rx="160" ry="12" fill="#000" opacity=".45" filter="url(#saSoft)"/>
 </svg></div>
       <div class="msg">Virus y bacterias no se ven, pero están ahí. <span class="hl">Protege tu espacio.</span><br><span style="font-size:14px;color:#aaa;font-weight:400;">Sanitización ambiental con productos autorizados.</span></div>
-      <a href="#" class="call-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:22px;flex-shrink:0;"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 2.9a2 2 0 0 1-.4 2.1L8 10.1a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.4 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
-        <div><div class="num">+56 9 1234 5678</div><div class="sub">Llámanos ahora</div></div>
-      </a>
     </div>
     <div class="rat-banner-inner slide">
       <div class="slide-visual"><svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustracion de excavadora">
@@ -474,14 +448,12 @@
  <path d="M 160 128 h 60" stroke="#ffb27a" stroke-width="3" filter="url(#deSoft)" opacity=".7"/>
 </svg></div>
       <div class="msg">¿Proyecto de demolición? La desratización previa <span class="hl">es un requisito sanitario.</span><br><span style="font-size:14px;color:#aaa;font-weight:400;">Te ayudamos a cumplirlo con un servicio profesional.</span></div>
-      <a href="#" class="call-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="width:22px;flex-shrink:0;"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 2.9a2 2 0 0 1-.4 2.1L8 10.1a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.4 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
-        <div><div class="num">+56 9 1234 5678</div><div class="sub">Llámanos ahora</div></div>
-      </a>
+    </div>
     </div>
     <button class="arrow right" aria-label="Siguiente" onclick="moveSlide(1)">›</button>
+    <div class="dots" id="bannerDots"><span class="active"></span><span></span><span></span><span></span></div>
+    </div>
   </div>
-  <div class="dots" id="bannerDots"><span class="active"></span><span></span><span></span><span></span></div>
 </section>
 
 <!-- ================= POR QUÉ PREFERIRNOS ================= -->
@@ -528,44 +500,39 @@
 <!-- ================= METODO + SECTORES ================= -->
 <section class="section" id="metodo">
   <div class="container split-grid">
-    <div class="panel">
+    <div class="panel stepper-panel">
       <h2>NUESTRO <span>MÉTODO DE TRABAJO</span></h2>
-      <div class="method-row">
+      <div class="methods-grid">
         <div class="method-step">
           <div class="num">1</div>
           <div class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div>
           <h4>INSPECCIÓN</h4>
           <p>Evaluamos el lugar y detectamos el problema.</p>
         </div>
-        <div class="method-arrow">→</div>
         <div class="method-step">
           <div class="num">2</div>
           <div class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
           <h4>DIAGNÓSTICO</h4>
           <p>Identificamos la plaga y determinamos el tratamiento.</p>
         </div>
-        <div class="method-arrow">→</div>
         <div class="method-step">
           <div class="num">3</div>
           <div class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="13" r="5"/><path d="M12 4v2M6 6l1.5 1.5M18 6l-1.5 1.5"/></svg></div>
           <h4>PLAN DE ACCIÓN</h4>
           <p>Diseñamos el plan más adecuado a su necesidad.</p>
         </div>
-        <div class="method-arrow">→</div>
         <div class="method-step">
           <div class="num">4</div>
           <div class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
           <h4>TRATAMIENTO</h4>
           <p>Aplicamos el método efectivo y con seguridad.</p>
         </div>
-        <div class="method-arrow">→</div>
         <div class="method-step">
           <div class="num">5</div>
           <div class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 7v5l3 3"/></svg></div>
           <h4>SEGUIMIENTO</h4>
           <p>Verificamos resultados y prevenimos futuras infestaciones.</p>
         </div>
-        <div class="method-arrow">→</div>
         <div class="method-step">
           <div class="num">6</div>
           <div class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg></div>
@@ -573,28 +540,47 @@
           <p>Entregamos consejos y medidas preventivas personalizadas.</p>
         </div>
       </div>
+
+      <div class="method-highlights">
+        <div class="mh-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M12 2l3 6.5 7 1-5 4.8 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.5l7-1z"/></svg>
+          <div>
+            <strong>Productos certificados</strong>
+            <span>Autorizados por el ISP</span>
+          </div>
+        </div>
+        <div class="mh-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/></svg>
+          <div>
+            <strong>Garantía de resultado</strong>
+            <span>Re-tratamiento sin costo</span>
+          </div>
+        </div>
+        <div class="mh-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          <div>
+            <strong>Técnicos certificados</strong>
+            <span>Con experiencia comprobada</span>
+          </div>
+        </div>
+        <div class="mh-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 7v5l3 3"/></svg>
+          <div>
+            <strong>Respuesta en 24 hrs</strong>
+            <span>Atención rápida y eficiente</span>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="panel" id="sectores">
       <h2>SECTORES QUE <span>PROTEGEMOS</span></h2>
-      <div class="sectors-grid">
-        <div class="sector-card">
-          <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg>Hogares</div>
-        </div>
-        <div class="sector-card">
-          <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="4" y="3" width="16" height="18"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1M9 16h1M14 16h1"/></svg>Oficinas</div>
-        </div>
-        <div class="sector-card">
-          <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 2v7M9 2v7M6 9a3 3 0 0 0 6 0V2M18 2v20M18 2a4 4 0 0 0 0 8"/></svg>Restaurantes</div>
-        </div>
-        <div class="sector-card">
-          <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 8v8M8 12h8"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>Clínicas</div>
-        </div>
-        <div class="sector-card">
-          <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>Colegios</div>
-        </div>
-        <div class="sector-card">
-          <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M2 20V10l6 4v-4l6 4v-4l6 4v6H2z"/></svg>Industrias</div>
-        </div>
+      <div class="sectors-list">
+        <div class="sector-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg><span>Hogares</span></div>
+        <div class="sector-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="4" y="3" width="16" height="18"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1M9 16h1M14 16h1"/></svg><span>Oficinas</span></div>
+        <div class="sector-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M6 2v7M9 2v7M6 9a3 3 0 0 0 6 0V2M18 2v20M18 2a4 4 0 0 0 0 8"/></svg><span>Restaurantes</span></div>
+        <div class="sector-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 8v8M8 12h8"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>Clínicas</span></div>
+        <div class="sector-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg><span>Colegios</span></div>
+        <div class="sector-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M2 20V10l6 4v-4l6 4v-4l6 4v6H2z"/></svg><span>Industrias</span></div>
       </div>
     </div>
   </div>
@@ -603,38 +589,53 @@
 <!-- ================= TESTIMONIOS + CONTACTO ================= -->
 <section class="section" id="testimonios">
   <div class="container test-contact-grid">
-    <div>
+    <div class="test-panel">
       <h2 style="font-size:26px;text-transform:uppercase;margin-bottom:24px;">LO QUE DICEN NUESTROS <span style="color:var(--orange)">CLIENTES</span></h2>
-      <div class="test-cards">
-        <div class="test-card">
-          <div class="stars">★★★★★</div>
-          <p class="quote">"Excelente servicio, muy profesionales y preocupados. El problema de roedores en nuestra empresa quedó solucionado desde la primera visita."</p>
-          <div class="test-author">
-            <div class="avatar-ini">JM</div>
-            <div><div class="name">Javier M.</div><div class="role">Gerente de Operaciones</div></div>
+      <div class="tc-wrap">
+        <div class="test-cards">
+          <div class="test-track">
+            <div class="test-card">
+              <div class="stars">★★★★★</div>
+              <p class="quote">"Excelente servicio, muy profesionales y preocupados. El problema de roedores en nuestra empresa quedó solucionado desde la primera visita."</p>
+              <div class="test-author"><div class="avatar-ini">JM</div>
+                <div><div class="name">Javier M.</div><div class="role">Gerente de Operaciones</div></div>
+              </div>
+            </div>
+            <div class="test-card">
+              <div class="stars">★★★★★</div>
+              <p class="quote">"Puntuales, responsables y con mucha experiencia. Se nota que trabajan con productos autorizados y saben lo que hacen. 100% recomendados."</p>
+              <div class="test-author"><div class="avatar-ini">CR</div>
+                <div><div class="name">Carolina R.</div><div class="role">Administradora de Edificio</div></div>
+              </div>
+            </div>
+            <div class="test-card">
+              <div class="stars">★★★★★</div>
+              <p class="quote">"Solicité un servicio de sanitización para mi local y quedé muy conforme. Volveré a contratarlos sin duda."</p>
+              <div class="test-author"><div class="avatar-ini">FA</div>
+                <div><div class="name">Felipe A.</div><div class="role">Dueño de Restaurante</div></div>
+              </div>
+            </div>
+            <div class="test-card">
+              <div class="stars">★★★★★</div>
+              <p class="quote">"Nos ayudaron con un problema de cucarachas en la cocina del local. Rápidos, efectivos y con garantía. Muy buen trato."</p>
+              <div class="test-author"><div class="avatar-ini">MV</div>
+                <div><div class="name">Marcela V.</div><div class="role">Propietaria de Local Gastronómico</div></div>
+              </div>
+            </div>
+            <div class="test-card">
+              <div class="stars">★★★★★</div>
+              <p class="quote">"Llevamos 2 años trabajando con Orange Pest para mantenimiento preventivo. Siempre cumplen y los recomendamos totalmente."</p>
+              <div class="test-author"><div class="avatar-ini">RB</div>
+                <div><div class="name">Roberto B.</div><div class="role">Jefe de Mantención, Industria</div></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="test-card">
-          <div class="stars">★★★★★</div>
-          <p class="quote">"Puntuales, responsables y con mucha experiencia. Se nota que trabajan con productos autorizados y saben lo que hacen. 100% recomendados."</p>
-          <div class="test-author">
-            <div class="avatar-ini">CR</div>
-            <div><div class="name">Carolina R.</div><div class="role">Administradora de Edificio</div></div>
-          </div>
-        </div>
-        <div class="test-card">
-          <div class="stars">★★★★★</div>
-          <p class="quote">"Solicité un servicio de sanitización para mi local y quedé muy conforme. Volveré a contratarlos sin duda."</p>
-          <div class="test-author">
-            <div class="avatar-ini">FA</div>
-            <div><div class="name">Felipe A.</div><div class="role">Dueño de Restaurante</div></div>
-          </div>
+        <div class="tc-dots" id="tcDots">
+          <span class="active"></span><span></span><span></span><span></span><span></span>
         </div>
       </div>
-      <div class="dots" style="justify-content:flex-start;padding-left:4px;">
-        <span class="active"></span><span></span><span></span><span></span>
-      </div>
-    </div>
+    </div><!-- /.test-panel -->
 
     <div class="contact-panel" id="contacto">
       <h2>CONTÁCTA<span>NOS</span></h2>
@@ -750,6 +751,10 @@
     <div class="footer-bottom">© 2026 Orange Pest. Todos los derechos reservados.</div>
   </div>
 </footer>
+<a href="https://wa.me/56912345678" target="_blank" rel="noopener" class="wsp-float" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.6 14.3c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 1-2.3.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5.2.5.8 1.9.8 2 .1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.6.6-.2.2-.4.4-.2.8.2.4.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.4.2.6.1.8-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2 1 2.3 1.1.3.2.5.3.6.4.1.2.1.9-.1 1.5z"/></svg>
+</a>
 <script src="js/main.js"></script>
 </body>
 </html>
+
