@@ -117,7 +117,7 @@
 
     var originals = Array.from(track.children);
     var total   = originals.length; // 5
-    var visible = 3;
+    var visible = window.innerWidth <= 640 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
     var gap     = 14;
 
     // Prepend clones of last 3, append clones of first 3

@@ -416,6 +416,10 @@
     .why-grid{grid-template-columns:repeat(2,1fr);}
     .split-grid{grid-template-columns:1fr;}
     .test-contact-grid{grid-template-columns:1fr;}
+    .test-panel{width:100%;height:auto;}
+    .test-cards{height:240px;}
+    .methods-grid{grid-template-columns:repeat(3,1fr);}
+    .method-highlights{grid-template-columns:repeat(2,1fr);}
     .footer-grid{grid-template-columns:repeat(2,1fr);}
     .banner-wrap{max-width:100%;}
     .rat-banner-inner{grid-template-columns:1fr;text-align:center;}
@@ -452,20 +456,19 @@
     .why-grid{grid-template-columns:1fr;}
     .feature-card{padding:20px;}
     /* Process / method */
-    .method-row{grid-template-columns:repeat(2,1fr);gap:14px;}
-    .method-step{}
-    /* Sectors */
-    .sectors-grid{grid-template-columns:repeat(2,1fr);}
-    /* Testimonials carousel — mobile: show 1 card */
-    .test-carousel-wrap{padding:0 38px;}
+    .methods-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
+    .method-highlights{grid-template-columns:repeat(2,1fr);}
+    /* Testimonials */
+    .test-contact-grid{grid-template-columns:1fr;}
+    .test-panel{width:100%;height:auto;}
+    .test-cards{height:200px;}
     /* Contact form */
-    .contact-form .form-row{flex-direction:column;}
+    .form-row{grid-template-columns:1fr;}
     /* Footer */
     .footer-grid{grid-template-columns:1fr;gap:32px;}
     .footer-bottom{font-size:11px;}
-    /* Rating / testimonials */
+    /* Method + sectors */
     .split-grid{grid-template-columns:1fr;}
-    .test-contact-grid{grid-template-columns:1fr;}
     /* Misc */
     .section-head{margin-bottom:32px;}
     section{padding:48px 0;}
